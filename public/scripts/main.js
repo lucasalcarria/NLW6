@@ -28,6 +28,12 @@ function handleClick(event, check = true){
 
     const text = check ? "Marcar como lida" : "Excluir"
 
+    const form = document.querySelector(".modal form")
+
+    const roomId = document.querySelector("room-id").dataset.id
+
+    form.setAttribute("action", `/room/:room/:question/:action`)
+
     modalTitle.innerHTML = `${text} esta pergunta`
 
     modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`
